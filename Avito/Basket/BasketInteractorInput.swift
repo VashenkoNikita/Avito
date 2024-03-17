@@ -11,11 +11,5 @@ final class BasketInteractorInput: BasketInteractorInputProtocol {
     var output: BasketInteractorOutputProtocol?
 
     func fetchItems() {
-
-        let items: [ProductListModel] = [
-            ProductListModel(imageName: "heart", price: "Price1", description: "Description1"),
-        ]
-
-        output?.fetchedItems(items)
     }
 }

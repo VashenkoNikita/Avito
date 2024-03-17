@@ -22,7 +22,7 @@ final class ProductListCell: UICollectionViewCell {
 
     private struct Constants {
         static let cornerRadius: CGFloat = 6
-        static let offset: CGFloat = 7
+        static let offset: CGFloat = 10
         static let imageHeight: CGFloat = 50
         static let priceFontSize: CGFloat = 20
         static let descriptionFontSize: CGFloat = 15
@@ -35,8 +35,8 @@ final class ProductListCell: UICollectionViewCell {
 
     private var imageView: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = Constants.cornerRadius
+        image.contentMode = .scaleAspectFill 
         return image
     }()
 
@@ -52,6 +52,7 @@ final class ProductListCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: Constants.descriptionFontSize)
         label.textColor = .lightGray
+        label.numberOfLines = 0
         return label
     }()
 
@@ -130,7 +131,7 @@ extension ProductListCell {
         return [
             descriptionLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: Constants.offset),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.offset),
-            trailingAnchor.constraint(equalTo: favoriteButton.trailingAnchor, constant: Constants.offset)
+            favoriteButton.leadingAnchor.constraint(equalTo: descriptionLabel.trailingAnchor, constant: Constants.offset)
         ]
     }
 
@@ -154,9 +155,9 @@ extension ProductListCell {
 extension ProductListCell {
     func configure(_ cell: ProductListModel) {
         item = cell
-        imageView.image = UIImage(systemName: cell.imageName)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        imageView.image = UIImage(named: cell.imageName ?? "")
         priceLabel.text = cell.price
-        descriptionLabel.text = cell.description
+        descriptionLabel.text = cell.descript
     }
 }
 
@@ -172,6 +173,7 @@ extension ProductListCell {
         ? imageFill
         : imageNotFill
         favoriteButton.setImage(image, for: .normal)
+        item?.isHaveFavorite = isActiveFavorite
         delegate?.addFavorite(item)
     }
 
@@ -184,6 +186,7 @@ extension ProductListCell {
         ? imageFill
         : imageNotFill
         basketButton.setImage(image, for: .normal)
+        item?.isHaveBasket = isActiveBasket
         delegate?.addBasket(item)
     }
 }

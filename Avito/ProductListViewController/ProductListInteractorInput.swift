@@ -9,20 +9,36 @@ import Foundation
 
 final class ProductListInteractorInput: ProductListInteractorInputProtocol {
     var output: ProductListInteractorOutputProtocol?
-    
+    var service: StorageService? = nil
+
+    @MainActor 
     func fetchItems() {
-
-        let items: [ProductListModel] = [
-            ProductListModel(imageName: "heart", price: "Price1", description: "Description1"),
-            ProductListModel(imageName: "heart", price: "Price2", description: "Description2"),
-            ProductListModel(imageName: "heart", price: "Price3", description: "Description3"),
-            ProductListModel(imageName: "heart", price: "Price4", description: "Description4"),
-            ProductListModel(imageName: "heart", price: "Price5", description: "Description5"),
-            ProductListModel(imageName: "heart", price: "Price6", description: "Description6"),
-            ProductListModel(imageName: "heart", price: "Price7", description: "Description7"),
-            ProductListModel(imageName: "heart", price: "Price8", description: "Description8"),
-        ]
-
+        let items = service?.loadProducts() ?? []
         output?.fetchedItems(items)
+    }
+
+    @MainActor
+    func addProduct(_ product: ProductListModel) {
+        service?.insertProduct(product)
+    }
+
+    @MainActor
+    func addProductBasket(_ product: ProductListModel) {
+        service?.insertProductBasket(product)
+    }
+
+    @MainActor
+    func addProductFavorite(_ product: ProductListModel) {
+        service?.insertProductFavorite(product)
+    }
+
+    @MainActor
+    func removeProductBasket(_ product: ProductListModel) {
+        service?.removeProductBasket(product)
+    }
+
+    @MainActor
+    func removeProductFavorite(_ product: ProductListModel) {
+        service?.removeProductFavorite(product)
     }
 }

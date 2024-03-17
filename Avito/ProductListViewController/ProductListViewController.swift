@@ -9,8 +9,8 @@ import UIKit
 
 final class ProductListViewController: UIViewController, ProductListViewProtocol {
     private enum Constants {
-        static let offset: CGFloat = 20
-        static let heightCell: CGFloat = 250
+        static let offset: CGFloat = 10
+        static let heightCell: CGFloat = 270
         static let productList = "Список товаров"
     }
 
@@ -42,7 +42,7 @@ final class ProductListViewController: UIViewController, ProductListViewProtocol
     }
 
 
-    func showItems(_ items: [ProductListModel]) {
+    func reloadData() {
         collectionView?.reloadData()
     }
 
@@ -59,7 +59,13 @@ final class ProductListViewController: UIViewController, ProductListViewProtocol
 
     @objc
     private func createProduct() {
-
+        let item = ProductListModel(
+            imageName: "avito",
+            price: "10 000 P",
+            descript: "Описание товара — это блок с информацией."
+        )
+        presenter?.addItem(item)
+        collectionView?.reloadData()
     }
 }
 
@@ -98,8 +104,14 @@ extension ProductListViewController: UICollectionViewDelegate {
 // MARK: ProductListCellDelegateProtocol
 
 extension ProductListViewController: ProductListCellDelegateProtocol {
-    func addFavorite(_ item: ProductListModel?) {}
+    func addFavorite(_ item: ProductListModel?) {
+        guard let item else { return }
+        presenter?.addFavorite(item)
+    }
     
-    func addBasket(_ item: ProductListModel?) {}
+    func addBasket(_ item: ProductListModel?) {
+        guard let item else { return }
+        presenter?.addBasket(item)
+    }
 }
 

@@ -152,9 +152,9 @@ extension BasketCell {
 extension BasketCell {
     func configure(_ cell: ProductListModel) {
         item = cell
-        imageView.image = UIImage(systemName: cell.imageName)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        imageView.image = UIImage(systemName: cell.imageName ?? "")?.withTintColor(.white, renderingMode: .alwaysOriginal)
         priceLabel.text = cell.price
-        descriptionLabel.text = cell.description
+        descriptionLabel.text = cell.descript
     }
 }
 

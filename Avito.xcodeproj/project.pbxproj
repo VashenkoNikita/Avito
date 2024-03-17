@@ -40,6 +40,7 @@
 		019D1F2E2BA609400035E0F3 /* BasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D1F2D2BA6093F0035E0F3 /* BasketCell.swift */; };
 		019D1F302BA60D9E0035E0F3 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D1F2F2BA60D9E0035E0F3 /* FavoriteCell.swift */; };
 		019D1F332BA7062D0035E0F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D1F322BA7062D0035E0F3 /* DetailViewController.swift */; };
+		019D1F362BA72FFD0035E0F3 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019D1F352BA72FFD0035E0F3 /* StorageService.swift */; };
 		01B734C82B9E064800C6541A /* TabBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B734C72B9E064800C6541A /* TabBarProtocol.swift */; };
 		01B734CA2B9E06B100C6541A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B734C92B9E06B100C6541A /* TabBarViewController.swift */; };
 		01B734CD2B9E102500C6541A /* TabBarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B734CC2B9E102500C6541A /* TabBarPresenterProtocol.swift */; };
@@ -86,6 +87,7 @@
 		019D1F2D2BA6093F0035E0F3 /* BasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCell.swift; sourceTree = "<group>"; };
 		019D1F2F2BA60D9E0035E0F3 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		019D1F322BA7062D0035E0F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		019D1F352BA72FFD0035E0F3 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		01B734C72B9E064800C6541A /* TabBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProtocol.swift; sourceTree = "<group>"; };
 		01B734C92B9E06B100C6541A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		01B734CC2B9E102500C6541A /* TabBarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		014AB5EB2B7BFEE3005723E6 /* Avito */ = {
 			isa = PBXGroup;
 			children = (
+				019D1F342BA72FEA0035E0F3 /* Services */,
 				019D1F312BA705F20035E0F3 /* DetailViewController */,
 				01B734C52B9E058A00C6541A /* Main */,
 				01B734C42B9E057000C6541A /* Helpers */,
@@ -218,6 +221,14 @@
 				019D1F322BA7062D0035E0F3 /* DetailViewController.swift */,
 			);
 			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		019D1F342BA72FEA0035E0F3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				019D1F352BA72FFD0035E0F3 /* StorageService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		01B734C32B9E056500C6541A /* Assets */ = {
@@ -343,6 +354,7 @@
 				019D1F2B2BA607AF0035E0F3 /* FavoriteViewController.swift in Sources */,
 				019D1F2E2BA609400035E0F3 /* BasketCell.swift in Sources */,
 				019D1F272BA607AF0035E0F3 /* FavoriteRouterProtocol.swift in Sources */,
+				019D1F362BA72FFD0035E0F3 /* StorageService.swift in Sources */,
 				019D1EF62BA5C7870035E0F3 /* ProductListRouterProtocol.swift in Sources */,
 				01B734D72B9E1AAB00C6541A /* TabBarInteractor.swift in Sources */,
 				01B734D32B9E12AB00C6541A /* TabBarRouterProtocol.swift in Sources */,

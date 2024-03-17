@@ -10,12 +10,5 @@ final class FavoriteInteractorInput: FavoriteInteractorInputProtocol {
 
     func fetchItems() {
 
-        let items: [ProductListModel] = [
-            ProductListModel(imageName: "heart", price: "Price1", description: "Description1"),
-            ProductListModel(imageName: "heart", price: "Price2", description: "Description2"),
-            ProductListModel(imageName: "heart", price: "Price3", description: "Description3")
-        ]
-
-        output?.fetchedItems(items)
     }
 }

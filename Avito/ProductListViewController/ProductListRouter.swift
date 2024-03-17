@@ -14,12 +14,14 @@ final class ProductListRouter: ProductListRouterProtocol {
         let presenter = ProductListPreseter()
         let interactor = ProductListInteractorInput()
         let router = ProductListRouter()
+        let service = StorageService()
 
         view.presenter = presenter
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
         interactor.output = presenter
+        interactor.service = service
 
         return UINavigationController(rootViewController: view)
     }

@@ -9,6 +9,6 @@ protocol ProductListViewProtocol: AnyObject {
     // view presenter
     var presenter: ProductListPresenterProtocol? { get }
 
-    // метод для отображения items
-    func showItems(_ items: [ProductListModel])
+    // метод для обновления items
+    func reloadData()
 }

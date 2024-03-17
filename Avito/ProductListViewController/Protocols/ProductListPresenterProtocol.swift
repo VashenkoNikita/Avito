@@ -10,10 +10,13 @@ protocol ProductListPresenterProtocol: AnyObject {
     var interactor: ProductListInteractorInputProtocol? { get }
     var router: ProductListRouterProtocol? { get }
 
-
     func viewDidLoad()
     func numberOfItems() -> Int
     func configureCell(_ cell: ProductListCell, at index: Int)
     func clickCell()
+    func addItem(_ item: ProductListModel)
+    func addFavorite(_ item: ProductListModel)
+    func addBasket(_ item: ProductListModel)
+    func removeFavorite(_ item: ProductListModel)
+    func removedBasket(_ item: ProductListModel)
 }
-
